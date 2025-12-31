@@ -85,26 +85,106 @@
             display: flex;
             flex-direction: column;
             gap: 15px;
-            align-items: center;
+            max-width: 500px;
+            margin: 0 auto;
         }
 
         .project-link {
-            display: inline-block;
-            background: linear-gradient(135deg, #001f5c 0%, #003087 100%);
-            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
             text-decoration: none;
-            padding: 15px 35px;
-            border-radius: 50px;
-            font-weight: 500;
+            padding: 30px 25px;
+            border-radius: 12px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 31, 92, 0.2);
-            min-width: 280px;
+            box-shadow: 0 4px 15px rgba(0, 31, 92, 0.1);
+            border: 1px solid rgba(0, 31, 92, 0.1);
         }
 
         .project-link:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 31, 92, 0.3);
-            background: linear-gradient(135deg, #003087 0%, #004ab3 100%);
+            box-shadow: 0 8px 25px rgba(0, 31, 92, 0.2);
+            border-color: rgba(0, 31, 92, 0.2);
+        }
+
+        .project-link img {
+            max-width: 240px;
+            max-height: 90px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* Labeled boxes (Veridio, Citium) */
+        .project-link.with-label {
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .project-link.with-label img {
+            max-width: 140px;
+            max-height: 50px;
+        }
+
+        .project-label {
+            font-size: 0.95rem;
+            color: #001f5c;
+            font-weight: 600;
+        }
+
+        .project-link.coming-soon {
+            cursor: default;
+            opacity: 0.7;
+        }
+
+        .project-link.coming-soon:hover {
+            transform: none;
+            box-shadow: 0 4px 15px rgba(0, 31, 92, 0.1);
+        }
+
+        .coming-soon-tag {
+            font-size: 0.7rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        /* KeyGrid larger logo */
+        .project-link.keygrid {
+            padding: 20px 25px;
+        }
+
+        .project-link.keygrid img {
+            max-width: 408px;
+            max-height: 168px;
+        }
+
+        /* Complyant larger logo */
+        .project-link.complyant img {
+            max-width: 396px;
+            max-height: 158px;
+        }
+
+        /* Managed Keys larger logo */
+        .project-link.managedkeys img {
+            max-width: 336px;
+            max-height: 120px;
+        }
+
+        /* Citium larger logo */
+        .project-link.citium {
+            padding: 25px 25px;
+        }
+
+        .project-link.citium img {
+            max-width: 200px;
+            max-height: 140px;
+        }
+
+        .project-link.citium .project-label {
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         .contact {
@@ -138,7 +218,7 @@
 
         @media (max-width: 768px) {
             .container {
-                padding: 40px 30px;
+                padding: 10px 10px;
             }
 
             .logo {
@@ -149,9 +229,23 @@
                 font-size: 1rem;
             }
 
+            .projects {
+                gap: 12px;
+            }
+
             .project-link {
-                min-width: 240px;
-                padding: 12px 25px;
+                padding: 20px 15px;
+            }
+
+            .project-link img {
+                max-width: 200px;
+                max-height: 70px;
+            }
+
+            .project-link.keygrid img,
+            .project-link.complyant img {
+                max-width: 240px;
+                max-height: 90px;
             }
         }
 
@@ -169,10 +263,45 @@
 <body>
     <div class="container">
         <div class="logo-container">
-            <img src="cfnewlogo.png" alt="Cloudfragments Logo" class="logo">
+            <img src="cloudfragments.jpg" alt="Cloudfragments Logo" class="logo">
         </div>
 
         <p class="tagline">Cloud Solutions & Technology Innovation</p>
+
+        <div class="section">
+            <h2 class="section-title">Our Projects & Partners</h2>
+            <div class="projects">
+                <a href="https://www.keygrid.io" target="_blank" rel="noopener noreferrer" class="project-link keygrid">
+                    <img src="KeyGridLogo_full.svg" alt="KeyGrid">
+                </a>
+                <a href="https://www.citiumsoftware.com/about" target="_blank" rel="noopener noreferrer" class="project-link with-label citium">
+                    <img src="citium_logo.svg" alt="Citium Software">
+                    <span class="project-label">Citium Software</span>
+                </a>
+                <!--
+                <div class="project-link with-label coming-soon">
+                    <img src="veridio.svg" alt="Veridio">
+                </div>
+                -->
+                <a href="https://www.comply-ant.com" target="_blank" rel="noopener noreferrer" class="project-link complyant">
+                    <img src="complyant.png" alt="Comply Ant">
+                </a>
+                <a href="https://www.managedkeys.com" target="_blank" rel="noopener noreferrer" class="project-link managedkeys">
+                    <img src="mklogo.png" alt="Managed Keys">
+                </a>
+                <a href="https://www.viakube.com" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <img src="viakube-logo.svg" alt="Viakube">
+                </a>
+                <!--
+                <a href="#" class="project-link">
+                    <img src="pipelinelynx.png" alt="PipelineLynx">
+                </a>
+                <a href="#" class="project-link">
+                    <img src="hourowl.png" alt="HourOwl">
+                </a>
+                -->
+            </div>
+        </div>
 
         <div class="section">
             <h2 class="section-title">Company Information</h2>
@@ -183,24 +312,6 @@
                 3060 Espergærde<br>
                 Denmark
                 <div class="reg-number">Reg: DK25672666</div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 class="section-title">Our Projects & Partners</h2>
-            <div class="projects">
-                <a href="https://www.citiumsoftware.com" target="_blank" rel="noopener noreferrer" class="project-link">
-                    Citium Software
-                </a>
-                <a href="https://www.comply-ant.com" target="_blank" rel="noopener noreferrer" class="project-link">
-                    Comply Ant
-                </a>
-                <a href="https://www.keygrid.io" target="_blank" rel="noopener noreferrer" class="project-link">
-                    KeyGrid
-                </a>
-                <a href="https://www.managedkeys.com" target="_blank" rel="noopener noreferrer" class="project-link">
-                    Managed Keys
-                </a>
             </div>
         </div>
 
